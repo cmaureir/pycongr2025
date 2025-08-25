@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<typesystem package="simple">
+    <function signature="add(int, int)"/>
+</typesystem>
