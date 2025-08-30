@@ -1,0 +1,6 @@
+code/cpython/build/
+code/cpython/dist/
+code/cpython/env/
+
+*.bak
+*.egg-info

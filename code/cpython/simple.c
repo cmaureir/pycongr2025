@@ -13,17 +13,16 @@ static PyMethodDef simple_funcs[] = {
      (PyCFunction)simple_hello, // ml_meth
      METH_NOARGS,               // ml_flags
      simple_docs},              // ml_doc
-    {NULL, NULL, NULL, NULL}
+    {NULL, NULL, 0, NULL}
 };
 
 static struct PyModuleDef simplemodule = {
-    PyModuleDef_HEAD_INIT, // m_base
-    "simple",              // m_name
-    NULL,                  // m_doc
-    -1,                    // m_size
-    simple_funcs           // m_methods
+    .m_base = PyModuleDef_HEAD_INIT,
+    .m_name = "simple",
+    .m_size = 0,
+    .m_methods = simple_funcs,
 };
 
 PyMODINIT_FUNC PyInit_simple(void){
-    return PyModule_Create(&simplemodule);
+    return PyModuleDef_Init(&simplemodule);
 }
